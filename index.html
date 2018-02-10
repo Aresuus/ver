@@ -6,15 +6,27 @@
     <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="bootstrap-theme.css">
     <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" language="javascript">
+$(document).ready(function() {
+  $('#myObj').click(function() {
+    $('#counter').html(+$('#counter').html()+1);
+  });
+});
+</script>
+    
 </head>
 <body>
 
-    <form>
-       <div>
-            <button class="btn btn-primary  ">маршмелоучино</button>
+<form>
+     <div class="btn btn-primary" id="myObj" >маршмелоучино <div id="counter" style="color: red;">0</div></div>
+
+    
+ 
+          
             <button class="btn btn-primary">эспрессо</button>
             <button class="btn btn-primary">макиато</button>   
-       </div>
+   
        <div>
         <button class="btn btn-primary">горячий шоколад</button>
         <button class="btn btn-primary">доппио</button>
@@ -36,7 +48,11 @@
         <button class="btn btn-primary">адд маршмеолу</button>
         <button class="btn btn-primary">круасан</button>
         </div>
-    </form>
+
+    
+    
+</form>
+  
 
 
 </body>
