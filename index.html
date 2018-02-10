@@ -7,10 +7,21 @@
     <link rel="stylesheet" href="bootstrap-theme.css">
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-    <script type="text/javascript" language="javascript">
+   <script type="text/javascript" language="javascript">
 $(document).ready(function() {
+  //Если установлены cookie то читаем их и сохраняем значение в переменную, если не установлены то значение переменной = 0
+  var nCount = $.cookie('user_count') != undefined ? parseInt($.cookie('user_count')) : 0;
+  //Отображаем значение на странице
+  $('#counter').html(nCount);
+
+  //Клик по элементу
   $('#myObj').click(function() {
-    $('#counter').html(+$('#counter').html()+1);
+    //Увеличиваем счетчик на единицу
+    nCount++;
+    //Записываем значение в cookie
+    $.cookie('user_count', nCount, { expires: 7, path: '/' });
+    //Отображаем значение на странице
+    $('#counter').html(nCount);
   });
 });
 </script>
